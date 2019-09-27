@@ -1,16 +1,16 @@
 
 
-function sum(a, b){
+var sum = function(a, b){
     console.log( a + b);
     return a + b;
 }
 
-function sub(a, b){
+var sub = function(a, b){
     console.log( a - b);
 }
 
 
-function multiply(a, b){
+var multiply = function (a, b){
     console.log( a * b);
 }
 

@@ -11,6 +11,7 @@
 
     <div>
       <input type="text" name="user" id="user" placeholder="Enter user name ">    
+      <input type="text" name="filter" id="searchUser" placeholder="Enter user name ">    
     </div>
     <div id="users">
 
@@ -284,9 +285,32 @@ for(var index = 0; index < users.length; index++){
 }
 
 
-document.querySelector('input').addEventListener('change', function(event){
-  console.log(event.target.value);
+document.querySelector('input[name="user"]').addEventListener('change', function(event){
+  var node = generateUserLiElement({name:event.target.value});
+  
+  document.querySelector('ul').appendChild(node);
+  event.target.value='';
 })
+
+document.querySelector('input[name="filter"]').addEventListener('keyup',function(event){
+  var value = event.target.value;
+  var fusers = users.filter(function(user){
+    console.log(user.name)
+    return user.name.startsWith(value);
+  });
+
+  console.log(fusers);
+
+  
+  for(var index = 0; index < fusers.length; index++){
+    var liElement = generateUserLiElement(fusers[index]);
+    var ulElement = document.createElement('ul');
+    ulElement.appendChild(liElement);
+    document.querySelector('#users').removeChild();
+    document.querySelector('#users').appendChild(ulElement);
+
+}
+});
 
 
 divUsers.appendChild(ulElement);

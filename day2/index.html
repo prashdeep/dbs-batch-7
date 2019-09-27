@@ -251,14 +251,26 @@
 
 var divUsers = document.getElementById("users");
 
-var ulElement = document.createElement("ul");
-var liElement = document.createElement('li')
-var liElement2 = document.createElement('li')
+var generateUserLiElement = function(user){
+    var liElement = document.createElement('li')
+    liElement.textContent=user.name;
+    liElement.style.backgroundColor = "green";
+    liElement.style.padding="10px";
+    liElement.style.margin="10px";
+    liElement.style.listStyle="none";
+    liElement.style.color= '#ffffff';
+    liElement.style.width="50%";
+    liElement.style.fontSize='24px';
+    return liElement;
+}
 
-liElement.innerHTML="User1";
-liElement2.innerHTML="User2";
-ulElement.appendChild(liElement);
-ulElement.appendChild(liElement2);
+
+var ulElement = document.createElement("ul");
+for(var index = 0; index < users.length; index++){
+    var liElement = generateUserLiElement(users[index]);
+    ulElement.appendChild(liElement);
+
+}
 
 divUsers.appendChild(ulElement);
 

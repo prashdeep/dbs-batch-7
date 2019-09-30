@@ -1,4 +1,6 @@
+import { User } from "./User";
+
 export interface Transaction{
-    transferMoney (sender:string, reciever:string );
+    transferMoney (sender:User, reciever:User, amount:number );
 }
 

@@ -1,9 +1,10 @@
-class Product {
+export class Product {
 
-    constructor(private _name:string, private _price:number, private _desc?:string ){
+    constructor(private _name:string, private _price:number, private _desc?:string, private _productType?:ProductType ){
         this._name = _name;
         this._price = _price;
         this._desc = _desc;
+        this._productType = _productType;
     }
 
     get name():string {
@@ -22,6 +23,14 @@ class Product {
         this._name = name;
     }
 
+    get productType():ProductType {
+        return this._productType;
+    }
+
+    set productType(productType:ProductType){
+        this._productType = productType;
+    }
+
     set desc(desc:string){
         this._desc = desc;
     }
@@ -31,8 +40,11 @@ class Product {
     }
 }
 
-const iPhone = new Product("IPhone", 85000);
-const samsung = new Product("Samsumg", 65000, "Galaxy Note 10");
+export enum ProductType{
+    FASHION,
+    APARREL,
+    ELECTRONICS,
+    CELLPHONE
+}
 
-iPhone.price = 45000;
-console.log(iPhone.price)
+export const COMPANY_NAME="Apple Inc."

@@ -1,4 +1,4 @@
-class Employee {
+export class EmployeeTest {
     firsname:string;
     lastname:string;
     constructor(firsname:string, lastname:string){
@@ -27,7 +27,8 @@ class Employee {
     }
 }
 
-let manish = new Employee('Manish', 'Vinay');
-let vinay = new Employee('Vinay', 'Kumar');
 
-console.log(vinay.firsname)
+
+ export function testFunction() {
+    console.log('came inside the test function');
+}

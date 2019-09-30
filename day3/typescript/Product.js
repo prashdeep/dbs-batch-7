@@ -1,11 +1,15 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var Product = /** @class */ (function () {
-    function Product(_name, _price, _desc) {
+    function Product(_name, _price, _desc, _productType) {
         this._name = _name;
         this._price = _price;
         this._desc = _desc;
+        this._productType = _productType;
         this._name = _name;
         this._price = _price;
         this._desc = _desc;
+        this._productType = _productType;
     }
     Object.defineProperty(Product.prototype, "name", {
         get: function () {
@@ -37,9 +41,24 @@ var Product = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
+    Object.defineProperty(Product.prototype, "productType", {
+        get: function () {
+            return this._productType;
+        },
+        set: function (productType) {
+            this._productType = productType;
+        },
+        enumerable: true,
+        configurable: true
+    });
     return Product;
 }());
-var iPhone = new Product("IPhone", 85000);
-var samsung = new Product("Samsumg", 65000, "Galaxy Note 10");
-iPhone.price = 45000;
-console.log(iPhone.price);
+exports.Product = Product;
+var ProductType;
+(function (ProductType) {
+    ProductType[ProductType["FASHION"] = 0] = "FASHION";
+    ProductType[ProductType["APARREL"] = 1] = "APARREL";
+    ProductType[ProductType["ELECTRONICS"] = 2] = "ELECTRONICS";
+    ProductType[ProductType["CELLPHONE"] = 3] = "CELLPHONE";
+})(ProductType = exports.ProductType || (exports.ProductType = {}));
+exports.COMPANY_NAME = "Apple Inc.";

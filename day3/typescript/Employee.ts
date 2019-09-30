@@ -1,28 +1,28 @@
 class Employee {
-    firsname;
-    lastname;
-    constructor(firsname, lastname){
+    firsname:string;
+    lastname:string;
+    constructor(firsname:string, lastname:string){
         this.firsname = firsname;
         this.lastname = lastname;
     }
 
-    setFirstName(fName){
+    setFirstName(fName:string):void{
         this.firsname = fName;
     }
 
-    getFirstName(){
+    getFirstName():string{
         return this.firsname;
     }
 
-    setLastName(lName){
+    setLastName(lName:string):void{
         this.lastname = lName;
     }
 
-    getLastName(){
+    getLastName():string{
         return this.lastname;
     }
 
-    printEmployeeDetails(){
+    printEmployeeDetails():string{
         return `FirstName: ${this.firsname} , LastName: ${this.lastname}`
     }
 }

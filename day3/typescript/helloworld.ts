@@ -1,5 +1,9 @@
-const greet = (message) => {
+const greet = (message:string):void => {
     console.log(`${message}`)
 }
 
-greet("Welcome to Angular Session !!");
+let message: number;
+
+message.
+
+greet(" Typesafety example with typescript..")

@@ -43,10 +43,14 @@ export class AppComponent {
         }
       ]
 
+      selectedCourses=[];
+
 
       selectedCourse(selectedCourse:Course){
         console.log('course selected from the child inside the parent component');
         selectedCourse.students ++;
+        this.selectedCourses.push(selectedCourse);
+
       }
   
 }

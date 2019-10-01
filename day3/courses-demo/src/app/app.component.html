@@ -14,5 +14,18 @@
   <!--<div class="row">
     <app-employees></app-employees>
   </div>
+
   -->
+  <div class="row">
+
+      <ng-container *ngIf="selectedCourses.length === 0; else displaySelectedCourses">
+          <h3>There are no selected courses </h3>
+      </ng-container>
+      <ng-template #displaySelectedCourses>
+          <div class="col-md-4" *ngFor="let selectedCourse of selectedCourses">
+            <app-course [course]="selectedCourse" ></app-course>  
+          </div>  
+      </ng-template>
+    
+  </div>
 </div>

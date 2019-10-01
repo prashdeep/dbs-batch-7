@@ -49,6 +49,7 @@ export class AppComponent {
       selectedCourse(selectedCourse:Course){
         console.log('course selected from the child inside the parent component');
         selectedCourse.students ++;
+        this.courses = this.courses.filter(c => c.id !== selectedCourse.id);
         this.selectedCourses.push(selectedCourse);
 
       }

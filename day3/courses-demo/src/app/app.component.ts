@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Course } from './Course';
 
 @Component({
   selector: 'app-root',
@@ -43,9 +44,9 @@ export class AppComponent {
       ]
 
 
-      selectedCourse(selectedCourse){
+      selectedCourse(selectedCourse:Course){
         console.log('course selected from the child inside the parent component');
-        console.log(selectedCourse)
+        selectedCourse.students ++;
       }
   
 }

@@ -4,4 +4,5 @@ export class Course {
     name:string;
     price:number;
     desc:string;
+    students:number;
 }

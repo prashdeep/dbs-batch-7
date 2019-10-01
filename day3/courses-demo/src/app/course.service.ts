@@ -54,4 +54,9 @@ export class CourseService {
     this.courses = this.courses.filter(c => c.id !== course.id);
     return this.courses;
   }
+
+  addCourse(course:Course):Course[]{
+    this.courses.push(course);
+    return this.courses;
+  }
 }

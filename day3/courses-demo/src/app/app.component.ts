@@ -29,5 +29,16 @@ export class AppComponent implements OnInit{
       deleteCourse(course:Course){
         this.courses = this.courseService.deleteCourse(course);
       }
+
+      
+  addCourse(){
+    const course = new Course();
+    course.id = 45;
+    course.desc= "Spring Security";
+    course.name='Spring Security';
+    course.offer = true;
+    course.students = 15;
+    this.courses = this.courseService.addCourse(course);
+  }
   
 }

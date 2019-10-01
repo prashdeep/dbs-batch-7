@@ -9,7 +9,11 @@
           <app-course [course]="c" (selected)="selectedCourse($event)" (deleteHandler)="deleteCourse($event)"></app-course>  
         </div>  
     </ng-template>
-  </div>
+
+
+   </div>
+   <h3>Add Course</h3>
+    <button class="btn btn-primary" (click)="addCourse()"> Add Course</button>
   
   <!--<div class="row">
     <app-employees></app-employees>

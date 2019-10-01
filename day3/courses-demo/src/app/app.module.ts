@@ -6,6 +6,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { PlayerComponent } from './player/player.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { CourseComponent } from './course/course.component';
+import { AddCourseComponent } from './add-course/add-course.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { CourseComponent } from './course/course.component';
     NavbarComponent,
     PlayerComponent,
     EmployeesComponent,
-    CourseComponent
+    CourseComponent,
+    AddCourseComponent
   ],
   imports: [
     BrowserModule

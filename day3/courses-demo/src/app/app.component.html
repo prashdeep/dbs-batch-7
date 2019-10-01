@@ -6,7 +6,7 @@
     </ng-container>
     <ng-template #displayCourses>
         <div class="col-md-4" *ngFor="let c of courses">
-          <app-course [course]="c" (selected)="selectedCourse($event)"></app-course>  
+          <app-course [course]="c" (selected)="selectedCourse($event)" (deleteHandler)="deleteCourse($event)"></app-course>  
         </div>  
     </ng-template>
   </div>
@@ -15,7 +15,7 @@
     <app-employees></app-employees>
   </div>
 
-  -->
+  
   <div class="row">
 
       <ng-container *ngIf="selectedCourses.length === 0; else displaySelectedCourses">
@@ -28,4 +28,5 @@
       </ng-template>
     
   </div>
+  -->
 </div>

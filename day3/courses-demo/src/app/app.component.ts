@@ -11,27 +11,41 @@ export class AppComponent {
 
           id:23,
           name:'Angular',
-          price:10000,
-          desc:'Angular 8 version'
+          price:8000,
+          offer:true,
+          desc:'Angular 8 version',
+          students:20
         },
         {
           id:24,
           name:'React',
           price:10000,
-          desc:'React 16.8 version'
+          offer:false,
+          desc:'React 16.8 version',
+          students:10
         },
         {
           id:26,
           name:'Java Spring Boot',
           price:15000,
-          desc:'Java Spring Boot 2.X version'
+          offer:true,
+          desc:'Java Spring Boot 2.X version',
+          students:15
         },
         {
           id:28,
           name:'Java MicroServices',
           price:20000,
-          desc:'Java Microservices'
+          offer:false,
+          desc:'Java Microservices',
+          students:10
         }
       ]
+
+
+      selectedCourse(selectedCourse){
+        console.log('course selected from the child inside the parent component');
+        console.log(selectedCourse)
+      }
   
 }

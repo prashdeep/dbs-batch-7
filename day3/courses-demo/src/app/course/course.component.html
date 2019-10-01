@@ -2,7 +2,11 @@
         <div class="card-body" >
           <h5 class="card-title">{{course.name}}</h5>
           <p class="card-text">{{course.desc}}</p>
-          <p class="card-text">Rs {{course.price}}</p>
-          <a href="#" class="btn btn-primary">Select</a>
+          <p class="card-text" 
+             [style.backgroundColor]="course.price > 15000 ? 'green':'tomato'">Rs {{course.price}}</p>
+          <a  class="btn" 
+              [class.btn-warning]="course.offer"
+              [class.btn-success]="!course.offer"
+             (click)="onSelect(course)" >Select</a>
         </div>
       </div>

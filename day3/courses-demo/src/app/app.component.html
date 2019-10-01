@@ -1,0 +1,18 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="row">
+    <ng-container *ngIf="courses.length === 0; else displayCourses">
+        <h3>There are no courses </h3>
+    </ng-container>
+    <ng-template #displayCourses>
+        <div class="col-md-4" *ngFor="let c of courses">
+          <app-course [course]="c"></app-course>  
+        </div>  
+    </ng-template>
+  </div>
+  
+  <!--<div class="row">
+    <app-employees></app-employees>
+  </div>
+  -->
+</div>

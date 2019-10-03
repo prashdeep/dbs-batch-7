@@ -1,37 +1,3 @@
 <app-navbar></app-navbar>
-<div class="container">
-  <div class="row">
-    <ng-container *ngIf="courses.length === 0; else displayCourses">
-        <h3>There are no courses </h3>
-    </ng-container>
-    <ng-template #displayCourses>
-        <div class="col-md-4" *ngFor="let c of courses">
-          <app-course [course]="c" (selected)="selectedCourse($event)" (deleteHandler)="deleteCourse($event)"></app-course>  
-        </div>  
-    </ng-template>
 
-
-   </div>
-   <h3>Add Course</h3>
-    <button class="btn btn-primary" (click)="addCourse()"> Add Course</button>
-  
-    <app-two-way></app-two-way>
-  <!--<div class="row">
-    <app-employees></app-employees>
-  </div>
-
-  
-  <div class="row">
-
-      <ng-container *ngIf="selectedCourses.length === 0; else displaySelectedCourses">
-          <h3>There are no selected courses </h3>
-      </ng-container>
-      <ng-template #displaySelectedCourses>
-          <div class="col-md-4" *ngFor="let selectedCourse of selectedCourses">
-            <app-course [course]="selectedCourse"></app-course>  
-          </div>  
-      </ng-template>
-    
-  </div>
-  -->
-</div>
+<router-outlet></router-outlet>

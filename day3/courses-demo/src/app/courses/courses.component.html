@@ -1,0 +1,11 @@
+<div class="container">
+    <div class="row">
+      <ng-container *ngIf="courses.length === 0; else displayCourses">
+          <h3>There are no courses </h3>
+      </ng-container>
+      <ng-template #displayCourses>
+          <div class="col-md-4" *ngFor="let c of courses">
+            <app-course [course]="c" (selected)="selectedCourse($event)" (deleteHandler)="deleteCourse($event)"></app-course>  
+          </div>  
+      </ng-template>
+  

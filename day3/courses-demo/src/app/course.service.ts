@@ -67,4 +67,11 @@ export class CourseService {
     this.courses.push(course);
     return this.courses;
   }
+
+  getCourseDetails(courseId):Course{
+      const selectedCourse:Course = this.courses.filter(c => c.id===courseId)[0];
+      console.log('inside the get course details ')
+      console.log(selectedCourse);
+      return selectedCourse
+  }
 }

@@ -17,4 +17,6 @@
               [disabled]="course.students > 19"
              (click)="onSelect(course)">{{course.students > 19 ?'No More Registration':'Register' }}</button>
         </div>
+        <a class="btn btn-success" [routerLink]="['/course-details', course.id]" routerLinkActive="router-link-active" >Details</a>
+        <button (click)="courseDetails(course)" class="btn btn-success">Details</button>
       </div>

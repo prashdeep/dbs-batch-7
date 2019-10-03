@@ -1,5 +1,6 @@
 import { Component, Input, EventEmitter,Output } from '@angular/core';
 import { Course } from '../Course';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-course',
@@ -7,6 +8,8 @@ import { Course } from '../Course';
   styleUrls: ['./course.component.css']
 })
 export class CourseComponent  {
+
+  constructor(private router:Router){}
 
   @Input('course') course:Course;
   @Output('selected') courseSelected = new EventEmitter();
@@ -22,6 +25,10 @@ export class CourseComponent  {
     console.log('came insdie the delete course method....')
     console.log(course)
     this.deleteCourseSelected.emit(course);
+  }
+
+  courseDetails(course){
+    this.router.navigate(['/course-details', course.id]);
   }
 
 

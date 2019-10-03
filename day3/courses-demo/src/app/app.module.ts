@@ -12,6 +12,10 @@ import { NamePipe } from './name.pipe';
 import {RouterModule} from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CoursesComponent } from './courses/courses.component';
+import { PureSortPipe } from './pure-sort.pipe';
+import { ImporeSortPipe } from './impore-sort.pipe';
+import { SortDigitsComponent } from './sort-digits/sort-digits.component';
+import { CourseDetailsComponent } from './course-details/course-details.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import { CoursesComponent } from './courses/courses.component';
     TwoWayComponent,
     NamePipe,
     NotFoundComponent,
-    CoursesComponent
+    CoursesComponent,
+    PureSortPipe,
+    ImporeSortPipe,
+    SortDigitsComponent,
+    CourseDetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -40,12 +48,20 @@ import { CoursesComponent } from './courses/courses.component';
         component:CoursesComponent
       },
       {
+        path:'course-details/:id',
+        component:CourseDetailsComponent
+      },
+      {
         path:'add',
         component:AddCourseComponent
       },
       {
         path:'two',
         component:TwoWayComponent
+      },
+      {
+        path:'pipes',
+        component:SortDigitsComponent
       },
       {
         path:'**',

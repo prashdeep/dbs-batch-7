@@ -1,0 +1,41 @@
+<div class="row">
+	<h3>Original List:</h3>
+
+	<p>
+		You get, what you insert with no order change
+	</p>
+
+	<div class="list">
+		<span *ngFor="let digit of originalList">
+<b>{{digit}}</b>, &nbsp; 
+</span>
+	</div>
+</div>
+
+<div class="row">
+	<h3>Impure Pipe</h3>
+
+	<p>
+		List is being sorted on every change
+	</p>
+
+	<div class="list">
+		<span *ngFor="let digit of impureSortableDigits | imporeSort">
+<b>{{digit}}</b>, &nbsp; 
+</span>
+	</div>
+</div>
+
+<div class="row">
+	<h3>Pure Pipe</h3>
+
+	<p>
+		List sorted on component load only
+	</p>
+
+	<div class="list">
+		<span *ngFor="let digit of pureSortableDigits | pureSort">
+<b>{{digit}}</b>, &nbsp; 
+</span>
+	</div>
+</div>

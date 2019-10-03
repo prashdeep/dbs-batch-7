@@ -2,10 +2,12 @@
   <div class="card" style="width: 18rem;">
         <div class="card-body" >
         <i class="pull-right fa fa-trash" style='cursor:pointer' (click)="deleteCourse(course)"></i>
-          <h5 class="card-title">{{course.name}}</h5>
+          <h5 class="card-title">{{course | formatter:'desc':'lowercase'}}</h5>
+          <p class="card-text">{{course.rating | number:'1.1-1'}}</p>
           <p class="card-text">{{course.desc}}</p>
+          <p class="card-text">{{course.start_date | date:'dd/MMMM/yyyy zzz E'}}</p>
           <p class="card-text" 
-             [style.backgroundColor]="course.price > 15000 ? 'green':'tomato'">Rs {{course.price}}</p>
+             [style.backgroundColor]="course.price > 15000 ? 'green':'tomato'">{{course.price | currency:'INR':true:'4.0-0'}}</p>
            <span>{{course.students}}</span>  
            
           <button class="btn" 

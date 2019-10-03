@@ -16,13 +16,17 @@ export class CourseService {
         name:'Angular',
         price:8000,
         offer:true,
+        start_date:new Date(),
         desc:'Angular 8 version',
+        rating:4.53543567,
         students:20
       },
       {
         id:24,
         name:'React',
         price:10000,
+        rating:3.88354357,
+        start_date:new Date(),
         offer:false,
         desc:'React 16.8 version',
         students:10
@@ -32,6 +36,8 @@ export class CourseService {
         name:'Java Spring Boot',
         price:15000,
         offer:true,
+        rating:4.34563,
+        start_date:new Date(),
         desc:'Java Spring Boot 2.X version',
         students:15
       },
@@ -39,6 +45,8 @@ export class CourseService {
         id:28,
         name:'Java MicroServices',
         price:20000,
+        rating:4.334354352,
+        start_date:new Date(),
         offer:false,
         desc:'Java Microservices',
         students:10

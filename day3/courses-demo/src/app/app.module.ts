@@ -8,6 +8,7 @@ import { EmployeesComponent } from './employees/employees.component';
 import { CourseComponent } from './course/course.component';
 import { AddCourseComponent } from './add-course/add-course.component';
 import { TwoWayComponent } from './two-way/two-way.component';
+import { NamePipe } from './name.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { TwoWayComponent } from './two-way/two-way.component';
     EmployeesComponent,
     CourseComponent,
     AddCourseComponent,
-    TwoWayComponent
+    TwoWayComponent,
+    NamePipe
   ],
   imports: [
     BrowserModule,

@@ -16,6 +16,9 @@ import { PureSortPipe } from './pure-sort.pipe';
 import { ImporeSortPipe } from './impore-sort.pipe';
 import { SortDigitsComponent } from './sort-digits/sort-digits.component';
 import { CourseDetailsComponent } from './course-details/course-details.component';
+import { CompOneComponent } from './comp-one/comp-one.component';
+import { CompTwoComponent } from './comp-two/comp-two.component';
+import { CompThreeComponent } from './comp-three/comp-three.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +35,10 @@ import { CourseDetailsComponent } from './course-details/course-details.componen
     PureSortPipe,
     ImporeSortPipe,
     SortDigitsComponent,
-    CourseDetailsComponent
+    CourseDetailsComponent,
+    CompOneComponent,
+    CompTwoComponent,
+    CompThreeComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +51,26 @@ import { CourseDetailsComponent } from './course-details/course-details.componen
       },
       {
         path:'courses',
-        component:CoursesComponent
+        component:CoursesComponent,
+        children:[
+          {
+            path:'',
+            redirectTo:'one',
+            pathMatch:'full'
+          },
+          {
+            path:'one',
+            component:CompOneComponent
+          },
+          {
+            path:'two',
+            component:CompTwoComponent
+          },
+          {
+            path:'three',
+            component:CompThreeComponent
+          }
+        ]
       },
       {
         path:'course-details/:id',

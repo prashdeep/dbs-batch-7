@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges, OnDestroy } from '@angular/core';
 import { Course } from './Course';
 import { CourseService } from './course.service';
 
@@ -7,14 +7,23 @@ import { CourseService } from './course.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit, OnChanges, OnDestroy {
 
     courses:Course[] = [];
 
     constructor(private courseService:CourseService){}
 
     ngOnInit(){
+      console.log('Component is loaded....')
       this.courses = this.courseService.getAllCourses();
+    }
+
+    ngOnChanges(simpleChanges){
+      console.log('called when the state of the component changes')
+    }
+
+    ngOnDestroy(): void {
+      console.log('Component is getting unmounted ....')   
     }
 
 

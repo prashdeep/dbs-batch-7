@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CourseService } from '../course.service';
 import { Course } from '../Course';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-course',
@@ -9,21 +10,26 @@ import { Course } from '../Course';
 })
 export class AddCourseComponent  {
 
-  constructor(private courseService:CourseService) { }
+  constructor(private courseService:CourseService, private router:Router) { }
 
   
   addCourse(){
-    const course = new Course();
-    course.id = 45;
-    course.desc= "Spring Security";
-    course.name='Spring Security';
-    course.offer = true;
-    course.students = 15;
-    this.courseService.addCourse(course);
+    
   }
 
   displayCourseName(courseName){
     console.log(courseName)
+  }
+
+  handleSubmit({value}){
+    const course = new Course();
+    course.id = Math.ceil(Math.random() * 100);
+    course.desc= value.courseDesc;
+    course.name= value.courseName;
+    course.offer = value.offer;
+    course.price = value.coursePrice;
+    this.courseService.addCourse(course);
+    this.router.navigate(['courses'])
   }
 
 }

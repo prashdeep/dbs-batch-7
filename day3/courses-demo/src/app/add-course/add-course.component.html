@@ -1,7 +1,7 @@
 <div class="container mt-4">
     <div class="row">
         <div class="col-md-6 offset-md-2">
-            <form>
+            <form #formValue = "ngForm" (ngSubmit)="handleSubmit(formValue)">
                 
                 <div class="form-group">
                     <label for="courseName">Course Name:</label>
@@ -14,7 +14,7 @@
                         #courseName="ngModel"
                         required 
                         minlength="8"
-                        maxlength="8"
+                        maxlength="16"
                         aria-describedby="courseName" 
                         placeholder="Enter course name">
                     </div>
@@ -62,18 +62,28 @@
                         type="date" 
                         class="form-control" 
                         id="startDate" 
+                        name="startDate"
                         required
+                        ngModel
+                        #startDate="ngModel"
                         placeholder="Enter date in dd-mm-yy format">
                 </div>
                 <div class="form-group form-check">
                     <input 
                         type="checkbox" 
                         class="form-check-input" 
+                        name="offer"
+                        ngModel
+                        #offer = "ngModel"
                         id="offer">
+                        
                     <label class="form-check-label" for="offer">Offer</label>
                 </div>
                 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button 
+                    type="submit" 
+                    [disabled]="formValue.invalid"
+                    class="btn btn-primary">Submit</button>
                 &nbsp;
                 <button type="button" class="btn btn-secondary">Clear</button>
             </form>

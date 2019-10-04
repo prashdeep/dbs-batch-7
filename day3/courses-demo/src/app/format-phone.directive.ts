@@ -6,8 +6,12 @@ import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 export class FormatPhoneDirective {
 
   codeToNumber = function(code){
+    if (code === 'IN'){
       return '+91';
+    } else {
+      return '+41';
     }
+  }
 
   @Input('formatPhone') countryCode;
 

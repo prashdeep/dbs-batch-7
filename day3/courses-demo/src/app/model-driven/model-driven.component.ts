@@ -15,23 +15,27 @@ export class ModelDrivenComponent {
     modelForm = new FormGroup({
       courseName:new FormControl('',[
         Validators.minLength(3),
-        Validators.requiredTrue,
+        Validators.required,
         Validators.maxLength(10)
       ]),
       courseDesc: new FormControl('', [
         Validators.minLength(3),
-        Validators.requiredTrue,
+        Validators.required,
         Validators.maxLength(10)
       ]),
       coursePrice: new FormControl('', [
         Validators.min(5000),
-        Validators.requiredTrue,
+        Validators.required,
         Validators.max(15000)
       ]),
       startDate:new FormControl('',[
-        Validators.requiredTrue,
+        Validators.required,
        ]),
       offer:new FormControl('',[Validators.required])
     });
+
+    get coursename(){
+      return this.modelForm.get('courseName');
+    }
 
 }

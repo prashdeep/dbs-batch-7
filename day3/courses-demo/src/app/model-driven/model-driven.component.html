@@ -10,10 +10,14 @@
                             type="text" 
                             class="form-control" 
                             name="courseName"
-                            formControlName="courseName",
+                            formControlName="courseName"
                             id="courseName" 
                             aria-describedby="courseName" 
                             placeholder="Enter course name">
+                    </div>
+                    <div class="alert alert-danger" *ngIf="coursename.touched && coursename.invalid">
+                            <span>{{coursename.invalid}}</span>
+                            <span>Invalid Course Name</span>
                     </div>
                     <div class="form-group">
                         <label for="courseDesc">Description:</label>
@@ -59,7 +63,6 @@
                     
                     <button 
                         type="submit" 
-                        [disabled]="formValue.invalid"
                         class="btn btn-primary">Submit</button>
                     &nbsp;
                     <button type="button" class="btn btn-secondary">Clear</button>

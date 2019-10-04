@@ -1,17 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { Course } from '../Course';
 import { CourseService } from '../course.service';
+import { CourseComponent } from '../course/course.component';
 
 @Component({
   selector: 'app-comp-one',
   templateUrl: './comp-one.component.html',
   styleUrls: ['./comp-one.component.css']
 })
-export class CompOneComponent implements OnInit {
+export class CompOneComponent implements OnInit, AfterViewInit {
 
   courses:Course[] = [];
 
-  constructor(private courseService:CourseService){}
+  @ViewChild(CourseComponent,{static:false}) courseComponent: CourseComponent;
+
+  constructor(private courseService:CourseService, private cd: ChangeDetectorRef){}
 
   ngOnInit(){
     console.log('Component is loaded....')
@@ -24,6 +27,14 @@ export class CompOneComponent implements OnInit {
 
   ngOnDestroy(): void {
     console.log('Component is getting unmounted ....')   
+  }
+
+  ngAfterViewInit() {
+    //this.courseComponent.message = "Setting from Parent....";
+    //this.cd.detectChanges();    
+  }
+  ngAfterContentInit(){
+
   }
 
 

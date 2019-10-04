@@ -24,6 +24,8 @@ import { TestComponent } from './test/test.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { FormatInputComponent } from './format-input/format-input.component';
 import { FormatPhoneDirective } from './format-phone.directive';
+import { TemplateDrivenComponent } from './template-driven/template-driven.component';
+import { ModelDrivenComponent } from './model-driven/model-driven.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +50,9 @@ import { FormatPhoneDirective } from './format-phone.directive';
     TestComponent,
     TooltipComponent,
     FormatInputComponent,
-    FormatPhoneDirective
+    FormatPhoneDirective,
+    TemplateDrivenComponent,
+    ModelDrivenComponent
   ],
   imports: [
     BrowserModule,
@@ -88,7 +92,22 @@ import { FormatPhoneDirective } from './format-phone.directive';
       },
       {
         path:'add',
-        component:AddCourseComponent
+        component:AddCourseComponent,
+        children:[
+          {
+            path:'',
+            redirectTo:'template-driven',
+            pathMatch:"full"
+          },
+          {
+            path:'template-driven',
+            component:TemplateDrivenComponent
+          },
+          {
+            path:'model-driven',
+            component:ModelDrivenComponent
+          }
+        ]
       },
       {
         path:'two',

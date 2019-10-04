@@ -1,6 +1,7 @@
 
   <div class="card" style="width: 18rem;">
         <div class="card-body" >
+          <h1>Message: {{message}}</h1>
         <i class="pull-right fa fa-trash" style='cursor:pointer' (click)="deleteCourse(course)"></i>
           <h5 class="card-title">{{course | formatter:'desc':'lowercase'}}</h5>
           <p class="card-text">{{course.rating | number:'1.1-1'}}</p>

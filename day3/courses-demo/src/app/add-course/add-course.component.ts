@@ -10,28 +10,6 @@ import { Router } from '@angular/router';
 })
 export class AddCourseComponent  {
 
-  constructor(private courseService:CourseService, private router:Router) { }
-
-  
-  addCourse(){
-    
-  }
-
-  displayCourseName(courseName){
-    console.log(courseName)
-  }
-
-  handleSubmit({value}){
-    const course = new Course();
-    course.id = Math.ceil(Math.random() * 100);
-    course.desc= value.courseDesc;
-    course.name= value.courseName;
-    course.offer = value.offer;
-    course.price = value.coursePrice;
-    course.students = 0;
-    course.rating = 0;
-    this.courseService.addCourse(course);
-    this.router.navigate(['courses'])
-  }
+ 
 
 }

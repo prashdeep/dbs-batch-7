@@ -21,6 +21,8 @@ export class CourseComponent  {
     this.courseSelected.emit(selectedCourse);
   }
 
+  message:string;
+
   deleteCourse(course){
     console.log('came insdie the delete course method....')
     console.log(course)

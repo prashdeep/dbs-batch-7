@@ -1,23 +1,28 @@
 
-  <div class="card" style="width: 18rem;">
+  <div class="card" >
+        <div class="card-header bg-secondary">
+            <i class="pull-right fa fa-trash" style='cursor:pointer' (click)="deleteCourse(course)"></i><i class="pull-right fa fa-edit"></i>
+        </div>
         <div class="card-body" >
           <!--<h1>Message: {{message}}</h1>-->
-        <i class="pull-right fa fa-trash" style='cursor:pointer' (click)="deleteCourse(course)"></i>
           <h5 class="card-title">{{course | formatter:'desc':'lowercase'}}</h5>
-          <p class="card-text">{{course.rating | number:'1.1-1'}} <app-rating [rating]="course.rating"></app-rating></p>
+          <p class="card-text"> <app-rating [rating]="course.rating"></app-rating> {{course.rating | number:'1.1-1'}} </p>
           <p class="card-text">{{course.desc}}</p>
-          <p class="card-text">{{course.start_date | date:'dd/MMMM/yyyy zzz E'}}</p>
-          <p class="card-text" 
-             [style.backgroundColor]="course.price > 15000 ? 'green':'tomato'">{{course.price | currency:'INR':true:'4.0-0'}}</p>
-           <span>{{course.students}}</span>  
+          <p class="card-text">{{course.start_date | date:'dd-MMM-yy'}}</p>
+          <p class="card-text">{{course.price | currency:'INR':true:'4.0-0'}}</p>
+          <div>{{course.students}} <i class="fa fa-user"></i> </div>  
            
-          <button class="btn" 
-              [class.btn-warning]="course.offer"
-              [class.btn-success]="!course.offer"
-              [class.btn-danger]="course.students > 14"
-              [disabled]="course.students > 19"
-             (click)="onSelect(course)">{{course.students > 19 ?'No More Registration':'Register' }}</button>
         </div>
-        <a class="btn btn-success" [routerLink]="['/course-details', course.id]" routerLinkActive="router-link-active" >Details</a>
-        <button (click)="courseDetails(course)" class="btn btn-success">Details</button>
+        <div class="card-footer pull-left bg-secondary">
+
+        <button class="btn btn-sm pull-right" 
+            [class.btn-warning]="course.offer"
+            [class.btn-success]="!course.offer"
+            [class.btn-danger]="course.students > 14"
+            [disabled]="course.students > 19"
+           (click)="onSelect(course)">{{course.students > 19 ?'No More Registration':'Register' }}</button>
+           <a class="btn btn-success btn-sm" [routerLink]="['/course-details', course.id]" routerLinkActive="router-link-active" >Details</a>
+        
+          </div>
+        
       </div>

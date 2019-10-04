@@ -28,6 +28,8 @@ export class AddCourseComponent  {
     course.name= value.courseName;
     course.offer = value.offer;
     course.price = value.coursePrice;
+    course.students = 0;
+    course.rating = 0;
     this.courseService.addCourse(course);
     this.router.navigate(['courses'])
   }

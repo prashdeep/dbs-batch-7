@@ -31,8 +31,6 @@ export class CompOneComponent implements OnInit {
     selectedCourse(selectedCourse:Course){
       console.log('course selected from the child inside the parent component');
       selectedCourse.students ++;
-      this.courses = this.courses.filter(c => c.id !== selectedCourse.id);
-
     }
 
     deleteCourse(course:Course){

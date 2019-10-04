@@ -19,6 +19,11 @@ import { CourseDetailsComponent } from './course-details/course-details.componen
 import { CompOneComponent } from './comp-one/comp-one.component';
 import { CompTwoComponent } from './comp-two/comp-two.component';
 import { CompThreeComponent } from './comp-three/comp-three.component';
+import { HelloComponent } from './hello/hello.component';
+import { TestComponent } from './test/test.component';
+import { TooltipComponent } from './tooltip/tooltip.component';
+import { FormatInputComponent } from './format-input/format-input.component';
+import { FormatPhoneDirective } from './format-phone.directive';
 
 @NgModule({
   declarations: [
@@ -38,7 +43,12 @@ import { CompThreeComponent } from './comp-three/comp-three.component';
     CourseDetailsComponent,
     CompOneComponent,
     CompTwoComponent,
-    CompThreeComponent
+    CompThreeComponent,
+    HelloComponent,
+    TestComponent,
+    TooltipComponent,
+    FormatInputComponent,
+    FormatPhoneDirective
   ],
   imports: [
     BrowserModule,
@@ -67,8 +77,8 @@ import { CompThreeComponent } from './comp-three/comp-three.component';
             component:CompTwoComponent
           },
           {
-            path:'three',
-            component:CompThreeComponent
+            path:'custom-directive',
+            component:FormatInputComponent
           }
         ]
       },
@@ -87,6 +97,10 @@ import { CompThreeComponent } from './comp-three/comp-three.component';
       {
         path:'pipes',
         component:SortDigitsComponent
+      },
+      {
+        path:'test',
+        component:TestComponent
       },
       {
         path:'**',

@@ -26,6 +26,7 @@ import { FormatInputComponent } from './format-input/format-input.component';
 import { FormatPhoneDirective } from './format-phone.directive';
 import { TemplateDrivenComponent } from './template-driven/template-driven.component';
 import { ModelDrivenComponent } from './model-driven/model-driven.component';
+import { RatingComponent } from './rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { ModelDrivenComponent } from './model-driven/model-driven.component';
     FormatInputComponent,
     FormatPhoneDirective,
     TemplateDrivenComponent,
-    ModelDrivenComponent
+    ModelDrivenComponent,
+    RatingComponent
   ],
   imports: [
     BrowserModule,

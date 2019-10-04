@@ -45,7 +45,7 @@ export class CourseService {
         id:28,
         name:'Java MicroServices',
         price:20000,
-        rating:4.334354352,
+        rating:5.0,
         start_date:new Date(),
         offer:false,
         desc:'Java Microservices',

@@ -2,7 +2,7 @@
 <div class="container mt-4">
         <div class="row">
             <div class="col-md-6 offset-md-2">
-                <form [formGroup]="modelForm">
+                <form [formGroup]="modelForm" (ngSubmit)="handleFormSubmit()">
                     
                     <div class="form-group">
                         <label for="courseName">Course Name:</label>
@@ -30,6 +30,11 @@
                             aria-describedby="courseDesc" 
                             placeholder="description of the course">
                         </div>
+                        
+                        <div class="alert alert-danger" *ngIf="coursedesc.touched && coursedesc.invalid">
+                                <span>{{coursedesc.invalid}}</span>
+                                <span>Invalid Course Description</span>
+                        </div>
                     <div class="form-group">
                         <label for="price">Price:</label>
                         <input 
@@ -39,6 +44,9 @@
                             formControlName="coursePrice"
                             name="coursePrice"
                             placeholder="Enter price">
+                    </div>
+                    <div class="alert alert-danger" *ngIf="courseprice.touched && courseprice.invalid">
+                            <span>Invalid Course Price</span>
                     </div>
                     <div class="form-group">
                         <label for="startDate">Start Date:</label>
@@ -63,6 +71,7 @@
                     
                     <button 
                         type="submit" 
+                        [disabled]="modelForm.invalid"
                         class="btn btn-primary">Submit</button>
                     &nbsp;
                     <button type="button" class="btn btn-secondary">Clear</button>

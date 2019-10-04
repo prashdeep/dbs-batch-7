@@ -38,4 +38,17 @@ export class ModelDrivenComponent {
       return this.modelForm.get('courseName');
     }
 
+    get coursedesc(){
+      return this.modelForm.get('courseDesc');
+    }
+
+    get courseprice(){
+      return this.modelForm.get('coursePrice');
+    }
+
+    handleFormSubmit(){
+      console.log('entered the form submission method')
+      console.log(this.modelForm.value);
+    }
+
 }

@@ -22,4 +22,8 @@ export class AddCourseComponent  {
     this.courseService.addCourse(course);
   }
 
+  displayCourseName(courseName){
+    console.log(courseName)
+  }
+
 }

@@ -21,6 +21,7 @@ export class CompOneComponent implements OnInit, AfterViewInit {
     this.courses = []; 
     this.courseService.getAllCourses()
                       .subscribe((courses) => this.courses = courses);
+    localStorage.setItem('token', 'authenticated');                  
   }
 
   ngOnChanges(simpleChanges){

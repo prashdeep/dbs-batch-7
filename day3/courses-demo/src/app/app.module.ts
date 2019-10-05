@@ -28,6 +28,9 @@ import { TemplateDrivenComponent } from './template-driven/template-driven.compo
 import { ModelDrivenComponent } from './model-driven/model-driven.component';
 import { RatingComponent } from './rating/rating.component';
 import {HttpClientModule} from '@angular/common/http';
+import { routes } from './routes';
+import { UserAuthGuard } from './UserAuthGuard';
+import { CanDeactivateGuard } from './CanDeactivateGuard';
 
 @NgModule({
   declarations: [
@@ -62,77 +65,9 @@ import {HttpClientModule} from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      {
-        path:'',
-        redirectTo:'courses',
-        pathMatch:'full'
-      },
-      {
-        path:'courses',
-        component:CoursesComponent,
-        children:[
-          {
-            path:'',
-            redirectTo:'one',
-            pathMatch:'full'
-          },
-          {
-            path:'one',
-            component:CompOneComponent
-          },
-          {
-            path:'two',
-            component:CompTwoComponent
-          },
-          {
-            path:'custom-directive',
-            component:FormatInputComponent
-          }
-        ]
-      },
-      {
-        path:'course-details/:id',
-        component:CourseDetailsComponent
-      },
-      {
-        path:'add',
-        component:AddCourseComponent,
-        children:[
-          {
-            path:'',
-            redirectTo:'template-driven',
-            pathMatch:"full"
-          },
-          {
-            path:'template-driven',
-            component:TemplateDrivenComponent
-          },
-          {
-            path:'model-driven',
-            component:ModelDrivenComponent
-          }
-        ]
-      },
-      {
-        path:'two',
-        component:TwoWayComponent
-      },
-      {
-        path:'pipes',
-        component:SortDigitsComponent
-      },
-      {
-        path:'test',
-        component:TestComponent
-      },
-      {
-        path:'**',
-        component:NotFoundComponent
-      }
-    ])
+    RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [UserAuthGuard, CanDeactivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

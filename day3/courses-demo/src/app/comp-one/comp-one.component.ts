@@ -38,16 +38,15 @@ export class CompOneComponent implements OnInit, AfterViewInit {
   ngAfterContentInit(){
 
   }
-
-
-
     selectedCourse(selectedCourse:Course){
       console.log('course selected from the child inside the parent component');
       selectedCourse.students ++;
     }
 
     deleteCourse(course:Course){
-      this.courses = this.courseService.deleteCourse(course);
+      console.log('deleting the course');
+      this.courseService.deleteCourse(course).subscribe(data => console.log('course got deleted..'));
+      this.courses = this.courses.filter(c => c.id !== course.id);
     }
 
 }

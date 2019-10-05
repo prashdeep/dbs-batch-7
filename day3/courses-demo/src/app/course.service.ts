@@ -16,14 +16,12 @@ export class CourseService {
       return this.httpClient.get<Course[]>("http://my-json-server.typicode.com/prashdeep/courseflix/courses/");
   }
 
-  deleteCourse(course:Course):Course[]{
-    this.courses = this.courses.filter(c => c.id !== course.id);
-    return this.courses;
+  deleteCourse(course:Course):Observable<any>{
+    return this.httpClient.delete<any>("http://my-json-server.typicode.com/prashdeep/courseflix/courses/"+course.id)
   }
 
-  addCourse(course:Course):Course[]{
-    this.courses.push(course);
-    return this.courses;
+  addCourse(course:Course):Observable<Course>{
+    return this.httpClient.post<Course>("http://my-json-server.typicode.com/prashdeep/courseflix/courses/", course);
   }
 
   getCourseDetails(courseId):Observable<Course>{

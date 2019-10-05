@@ -25,7 +25,7 @@ export class TemplateDrivenComponent {
     course.price = value.coursePrice;
     course.students = 0;
     course.rating = 0;
-    this.courseService.addCourse(course);
+    this.courseService.addCourse(course).subscribe(data => console.log(data));;
     this.router.navigate(['courses'])
   }
 }

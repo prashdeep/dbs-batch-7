@@ -18,7 +18,9 @@ export class CompOneComponent implements OnInit, AfterViewInit {
 
   ngOnInit(){
     console.log('Component is loaded....')
-    this.courses = this.courseService.getAllCourses();
+    this.courses = []; 
+    this.courseService.getAllCourses()
+                      .subscribe((courses) => this.courses = courses);
   }
 
   ngOnChanges(simpleChanges){

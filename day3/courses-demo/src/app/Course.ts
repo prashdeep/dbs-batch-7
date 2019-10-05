@@ -4,7 +4,7 @@ export class Course {
     name:string;
     price:number;
     offer:boolean;
-    start_date:Date;
+    start_date:string;
     rating:number;
     desc:string;
     students:number;

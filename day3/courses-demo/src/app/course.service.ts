@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Course } from './Course';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -8,54 +10,10 @@ export class CourseService {
 
   courses:Course[];
   
-  constructor() { 
-    this.courses =  [
-      {
+  constructor(private httpClient: HttpClient) {}
 
-        id:23,
-        name:'Angular',
-        price:8000,
-        offer:true,
-        start_date:new Date(),
-        desc:'Angular 8 version',
-        rating:4.53543567,
-        students:20
-      },
-      {
-        id:24,
-        name:'React',
-        price:10000,
-        rating:3.88354357,
-        start_date:new Date(),
-        offer:false,
-        desc:'React 16.8 version',
-        students:10
-      },
-      {
-        id:26,
-        name:'Java Spring Boot',
-        price:15000,
-        offer:true,
-        rating:4.34563,
-        start_date:new Date(),
-        desc:'Java Spring Boot 2.X version',
-        students:15
-      },
-      {
-        id:28,
-        name:'Java MicroServices',
-        price:20000,
-        rating:5.0,
-        start_date:new Date(),
-        offer:false,
-        desc:'Java Microservices',
-        students:10
-      }
-    ]
-  }
-
-  getAllCourses = ():Course[]=>{
-      return this.courses;
+  getAllCourses = ():Observable<Course[]>=>{
+      return this.httpClient.get<Course[]>("http://my-json-server.typicode.com/prashdeep/courseflix/courses/");
   }
 
   deleteCourse(course:Course):Course[]{
@@ -68,10 +26,7 @@ export class CourseService {
     return this.courses;
   }
 
-  getCourseDetails(courseId):Course{
-      const selectedCourse:Course = this.courses.filter(c => c.id===courseId)[0];
-      console.log('inside the get course details ')
-      console.log(selectedCourse);
-      return selectedCourse
+  getCourseDetails(courseId):Observable<Course>{
+     return this.httpClient.get<Course>('http://my-json-server.typicode.com/prashdeep/courseflix/courses/'+courseId);
   }
 }

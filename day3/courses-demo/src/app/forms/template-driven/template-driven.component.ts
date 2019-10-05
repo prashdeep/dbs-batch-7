@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CourseService } from '../course.service';
-import { Router } from '@angular/router';
-import { Course } from '../Course';
+import { CourseService } from 'src/app/courses/course.service';
+import { Course } from 'src/app/Course';
 
 @Component({
   selector: 'app-template-driven',

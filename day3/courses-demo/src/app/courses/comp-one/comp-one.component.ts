@@ -17,10 +17,11 @@ export class CompOneComponent implements OnInit, AfterViewInit {
   constructor(private courseService:CourseService, private cd: ChangeDetectorRef){}
 
   ngOnInit(){
-    console.log('Component is loaded....')
+    console.log(' comp -on e  Component is loaded....')
     this.courses = []; 
     this.courseService.getAllCourses()
                       .subscribe((courses) => this.courses = courses);
+    
   }
 
   ngOnChanges(simpleChanges){
@@ -48,5 +49,4 @@ export class CompOneComponent implements OnInit, AfterViewInit {
       this.courseService.deleteCourse(course).subscribe(data => console.log('course got deleted..'));
       this.courses = this.courses.filter(c => c.id !== course.id);
     }
-
 }

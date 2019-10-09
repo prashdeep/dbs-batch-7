@@ -1,6 +1,6 @@
 import { Component, Input, EventEmitter,Output } from '@angular/core';
-import { Course } from '../Course';
 import { Router } from '@angular/router';
+import { Course } from 'src/app/Course';
 
 @Component({
   selector: 'app-course',

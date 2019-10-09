@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, AfterViewInit, ChangeDetectorRef } from '@angular/core';
 import { Course } from '../Course';
 import { CourseService } from '../course.service';
-import { CourseComponent } from '../course/course.component';
+import { CourseComponent } from '../course-module/course/course.component';
 
 @Component({
   selector: 'app-comp-one',

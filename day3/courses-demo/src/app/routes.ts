@@ -1,9 +1,6 @@
-import { CoursesComponent } from './courses/courses.component';
 import { CompOneComponent } from './comp-one/comp-one.component';
 import { CompTwoComponent } from './comp-two/comp-two.component';
 import { FormatInputComponent } from './format-input/format-input.component';
-import { CourseDetailsComponent } from './course-details/course-details.component';
-import { AddCourseComponent } from './add-course/add-course.component';
 import { ModelDrivenComponent } from './feature-one/model-driven/model-driven.component';
 import { TwoWayComponent } from './two-way/two-way.component';
 import { SortDigitsComponent } from './sort-digits/sort-digits.component';
@@ -13,6 +10,9 @@ import { Route } from '@angular/router';
 import { UserAuthGuard } from './UserAuthGuard';
 import { CanDeactivateGuard } from './CanDeactivateGuard';
 import { TemplateDrivenComponent } from './feature-one/template-driven/template-driven.component';
+import { CoursesComponent } from './course-module/courses/courses.component';
+import { CourseDetailsComponent } from './course-module/course-details/course-details.component';
+import { AddCourseComponent } from './course-module/add-course/add-course.component';
 
 
 export const routes:Route[] = [

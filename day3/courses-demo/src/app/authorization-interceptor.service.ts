@@ -13,15 +13,15 @@ export class AuthorizationInterceptorService implements HttpInterceptor{
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>>{
     const user = localStorage.getItem('user');
     if (! user){
-      this.router.navigate(['/login'])
+      //this.router.navigate(['/login'])
     }
-    req = req.clone({
+    /*req = req.clone({
       setHeaders:{
         'Authorization':`Bearer ${JSON.parse(localStorage.getItem('user'))['token']}`
       }
     }
 
-    )
+    )*/
   
     return next.handle(req);
   }

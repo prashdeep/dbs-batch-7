@@ -26,6 +26,7 @@ import { CanDeactivateGuard } from './CanDeactivateGuard';
 import { AuthInterceptor } from './AuthInterceptor';
 import { FeatureOneModule } from './feature-one/feature-one.module';
 import { CourseModuleModule } from './course-module/course-module.module';
+import { AuthorizationInterceptorService } from './authorization-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -62,7 +63,10 @@ import { CourseModuleModule } from './course-module/course-module.module';
       provide:HTTP_INTERCEPTORS,
       multi:true,
       useClass:AuthInterceptor
-      
+    },{
+      provide:HTTP_INTERCEPTORS,
+      useClass:AuthorizationInterceptorService,
+      multi:true
     }
   ],
   bootstrap: [AppComponent]

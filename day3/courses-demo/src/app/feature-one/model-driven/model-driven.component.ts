@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CourseService } from '../course.service';
+import { CourseService } from '../../course.service';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl, MinLengthValidator, Validators } from '@angular/forms';
 

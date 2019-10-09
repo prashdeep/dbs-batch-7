@@ -1,5 +1,5 @@
 import { CanDeactivate, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
-import { TemplateDrivenComponent } from './template-driven/template-driven.component';
+import { TemplateDrivenComponent } from './feature-one/template-driven/template-driven.component';
 
 export class CanDeactivateGuard implements CanDeactivate<TemplateDrivenComponent> {
     canDeactivate(component, currentRoute: ActivatedRouteSnapshot, currentState: RouterStateSnapshot):  boolean {

@@ -24,8 +24,6 @@ import { TestComponent } from './test/test.component';
 import { TooltipComponent } from './tooltip/tooltip.component';
 import { FormatInputComponent } from './format-input/format-input.component';
 import { FormatPhoneDirective } from './format-phone.directive';
-import { TemplateDrivenComponent } from './template-driven/template-driven.component';
-import { ModelDrivenComponent } from './model-driven/model-driven.component';
 import { RatingComponent } from './rating/rating.component';
 import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { routes } from './routes';
@@ -58,14 +56,11 @@ import { FeatureOneModule } from './feature-one/feature-one.module';
     TooltipComponent,
     FormatInputComponent,
     FormatPhoneDirective,
-    TemplateDrivenComponent,
-    ModelDrivenComponent,
     RatingComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule,
     HttpClientModule,
     FeatureOneModule,
     RouterModule.forRoot(routes)

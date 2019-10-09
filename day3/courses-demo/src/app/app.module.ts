@@ -27,10 +27,12 @@ import { AuthInterceptor } from './AuthInterceptor';
 import { FeatureOneModule } from './feature-one/feature-one.module';
 import { CourseModuleModule } from './course-module/course-module.module';
 import { AuthorizationInterceptorService } from './authorization-interceptor.service';
+import { ChildComponent } from './child/child.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ChildComponent,
     NavbarComponent,
     PlayerComponent,
     EmployeesComponent,

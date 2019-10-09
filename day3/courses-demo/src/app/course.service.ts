@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Course } from './Course';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,22 +10,24 @@ import { Observable } from 'rxjs';
 export class CourseService {
 
   courses:Course[];
-  
-  constructor(private httpClient: HttpClient) {}
+  API_URL;
+  constructor(private httpClient: HttpClient) {
+    this.API_URL = environment.API_URL;
+  }
 
   getAllCourses = ():Observable<Course[]>=>{
-      return this.httpClient.get<Course[]>("http://my-json-server.typicode.com/prashdeep/courseflix/courses/");
+      return this.httpClient.get<Course[]>(this.API_URL);
   }
 
   deleteCourse(course:Course):Observable<any>{
-    return this.httpClient.delete<any>("http://my-json-server.typicode.com/prashdeep/courseflix/courses/"+course.id)
+    return this.httpClient.delete<any>(this.API_URL+course.id)
   }
 
   addCourse(course:Course):Observable<Course>{
-    return this.httpClient.post<Course>("http://my-json-server.typicode.com/prashdeep/courseflix/courses/", course);
+    return this.httpClient.post<Course>(this.API_URL, course);
   }
 
   getCourseDetails(courseId):Observable<Course>{
-     return this.httpClient.get<Course>('http://my-json-server.typicode.com/prashdeep/courseflix/courses/'+courseId);
+     return this.httpClient.get<Course>(this.API_URL+courseId);
   }
 }

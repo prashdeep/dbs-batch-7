@@ -60,8 +60,7 @@ export const routes:Route[] = [
         },
         {
           path:'template-driven',
-          component:TemplateDrivenComponent,
-          canDeactivate:[CanDeactivateGuard]
+          component:TemplateDrivenComponent
         },
         {
           path:'model-driven',

@@ -27,10 +27,12 @@ import { FormatPhoneDirective } from './format-phone.directive';
 import { TemplateDrivenComponent } from './template-driven/template-driven.component';
 import { ModelDrivenComponent } from './model-driven/model-driven.component';
 import { RatingComponent } from './rating/rating.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { routes } from './routes';
 import { UserAuthGuard } from './UserAuthGuard';
 import { CanDeactivateGuard } from './CanDeactivateGuard';
+import { AuthInterceptor } from './AuthInterceptor';
+import { FeatureOneModule } from './feature-one/feature-one.module';
 
 @NgModule({
   declarations: [
@@ -65,9 +67,19 @@ import { CanDeactivateGuard } from './CanDeactivateGuard';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FeatureOneModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [UserAuthGuard, CanDeactivateGuard],
+  providers: [
+    UserAuthGuard, 
+    CanDeactivateGuard,
+    {
+      provide:HTTP_INTERCEPTORS,
+      multi:true,
+      useClass:AuthInterceptor
+      
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
